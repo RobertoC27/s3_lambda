@@ -32,7 +32,7 @@ public class App implements RequestHandler<S3Event, String> {
         logger.log("* uploading to dest bucket");
         ObjectMetadata meta = new ObjectMetadata();
         meta.addUserMetadata("test", "value");
-        String destBucket = "signed-pdfs";
+        String destBucket = #dest-bucket-name;
         s3Client.putObject(destBucket, srcKey, objectData,meta);
         
         return "wenas";
